@@ -12,6 +12,10 @@
     "build-test": "babel ./test/files/src --out-dir ./test/files/dist",
     "prepublish": "npm run build"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ethically/ethical-utility-resolve-module.git"
+  },
   "author": "m-a-r-c-e-l-i-n-o <me@marceli.no>",
   "license": "ISC",
   "devDependencies": {
