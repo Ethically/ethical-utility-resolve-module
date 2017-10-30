@@ -58,7 +58,7 @@ describe('isAbsolutePackage()', () => {
         expect(isAbsolutePackage('app')).toBe(true)
     })
     it('should ignore filenames', () => {
-        expect(isAbsolutePackage('app.js')).toBe(false)
+        expect(isAbsolutePackage('app.js')).toBe(true)
     })
     it('should ignore relative named modules', () => {
         expect(isAbsolutePackage('app/file.js')).toBe(false)
@@ -106,13 +106,14 @@ describe('appendExtension()', () => {
         expect(appendExtension('app/file', 'json')).toBe('app/file.json')
     })
     it('should not append JavaScript extension to files that already contain it', () => {
-        expect(appendExtension('app.js')).toBe('app.js')
-        expect(appendExtension('app.json', 'json')).toBe('app.json')
-        expect(appendExtension('app.js', 'json')).toBe('app.js.json')
+        expect(appendExtension('app/file.js')).toBe('app/file.js')
+        expect(appendExtension('app/file.json', 'json')).toBe('app/file.json')
+        expect(appendExtension('app/file.js', 'json')).toBe('app/file.js.json')
     })
     it('should not append JavaScript extension to named modules', () => {
         expect(appendExtension('app')).toBe('app')
-        expect(appendExtension('app', 'json')).toBe('app')
+        expect(appendExtension('app', 'js')).toBe('app')
+        expect(appendExtension('app.module', 'js')).toBe('app.module')
     })
 })
 

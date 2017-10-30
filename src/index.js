@@ -14,7 +14,7 @@ export const isPackage = (name) => {
 }
 
 export const isAbsolutePackage = (name) => {
-    if (isPackage(name) && name.indexOf('/') === -1 && name.indexOf('.') === -1)
+    if (isPackage(name) && name.indexOf('/') === -1)
         return true
     return false
 }
