@@ -1,6 +1,6 @@
 {
   "name": "ethical-utility-resolve-module",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Module resolution utility used by Node and Browser for the Ethical framework.",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -11,6 +11,10 @@
     "build-node": "babel ./src --out-dir ./dist/cjs",
     "build-test": "babel ./test/files/src --out-dir ./test/files/dist",
     "prepublish": "npm run build"
+  },
+  "engines": {
+    "node" : ">=7.6",
+    "npm" : ">=3"
   },
   "repository": {
     "type": "git",
